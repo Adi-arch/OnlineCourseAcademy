@@ -30,26 +30,6 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
     </head>
-    <!-- <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            
-        </div>
-
-    </body> -->
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -62,6 +42,18 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                        @if (Route::has('login'))
+                            {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
+                                @auth
+                                    <li class="nav-item"><a href="{{ url('/dashboard') }}" class="nav-link js-scroll-trigger">Dashboard</a></li>
+                                @else
+                                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link js-scroll-trigger">Log in</a></li>
+                                @if (Route::has('register'))
+                                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link js-scroll-trigger">Register</a></li>
+                                @endif
+                                @endauth
+                            {{-- </div> --}}
+                        @endif
                     </ul>
                 </div>
             </div>
