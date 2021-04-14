@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Skill University</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -63,11 +63,11 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+                        <h1 class="text-uppercase text-white font-weight-bold">Boost your career with latest courses </h1>
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+                        <p class="text-white-75 font-weight-light mb-5">Be the part of Skill University Learn and Enjoy the Latest Trends in Industry.We make sure that our service provided to our students is advance and latest.</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="text-white mt-0">We've got what you need!</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                        <p class="text-white-50 mb-4">Start your journey with us,we provide courses that are required in the current trends.</p>
                         <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                     <div class="col-lg-8 text-center">
                         <h2 class="mt-0">Let's Get In Touch!</h2>
                         <hr class="divider my-4" />
-                        <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                        <p class="text-muted mb-5">Ready to start learning with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
                     </div>
                 </div>
                 <div class="row">
@@ -216,7 +216,7 @@
         </section>
         <!-- Footer-->
         <footer class="bg-light py-5">
-            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Skill University</div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
