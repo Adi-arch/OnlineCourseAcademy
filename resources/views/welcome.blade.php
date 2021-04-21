@@ -34,7 +34,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Skill University</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Skills University</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
@@ -62,12 +62,12 @@
         <header class="masthead">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Boost your career with latest courses </h1>
+                    <div class="col-lg-12 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Boost your career with our latest courses </h1>
                         <hr class="divider my-4" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">Be the part of Skill University Learn and Enjoy the Latest Trends in Industry.We make sure that our service provided to our students is advance and latest.</p>
+                    <div class="col-lg-10 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">We are here to help you with teaching and learning, connecting millions of students to the skills they need to succeed. We are here to make sure that our services provided to you are advanced and latest. Be a part of Skills University and Enjoy!</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                     </div>
                 </div>
@@ -78,9 +78,9 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <h2 class="text-white mt-0">Let our skills, support and shape your career</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Start your journey with us,we provide courses that are required in the current trends.</p>
+                        <p class="text-white-50 mb-4">We are here to help you reach your goal and pursue your dreams. So start your journey with us. We provide courses that are required in the current trends.</p>
                         <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
                     </div>
                 </div>
@@ -95,29 +95,29 @@
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-gem text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Sturdy Themes</h3>
-                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                            <h3 class="h4 mb-2">Learn Latest Skills</h3>
+                            <p class="text-muted mb-0">Learn new knowledge and skills in a variety of ways, from engaging video lectures and interactive elements.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Up to Date</h3>
-                            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                            <h3 class="h4 mb-2">Practise With Quizzes</h3>
+                            <p class="text-muted mb-0">Be better at recalling, retrieving, and applying new information after taking a quiz on it.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Ready to Publish</h3>
-                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                            <h3 class="h4 mb-2">Earn a certificate</h3>
+                            <p class="text-muted mb-0">Earn a certificate from professional instructors</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 text-center">
                         <div class="mt-5">
                             <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                            <h3 class="h4 mb-2">Here to Help,When you Need</h3>
+                            <p class="text-muted mb-0">Reach out to our intructors 24/7 and have your questions answered quickly so you can keep learning.</p>
                         </div>
                     </div>
                 </div>
