@@ -6,7 +6,7 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" x-data="{roles_id: 2}">
             @csrf
 
             <div>
@@ -39,6 +39,32 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+
+            <div class="mt-4">
+                <x-jet-label for="roles_id" value="{{ __('Register as:') }}" />
+                <select name="roles_id" x-model="roles_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                    <option value="2">User</option>
+                    <option value="3">Instructor</option>
+                    
+                </select>
+            </div>
+
+            <div class="mt-4" x-show="roles_id == 2">
+                <x-jet-label for="user_address" value="{{ __('Address') }}" />
+                <x-jet-input id="user_address" class="block mt-1 w-full" type="text" :value="old('user_address')" name="user_address" />
+            </div>
+
+            <div class="mt-4" x-show="roles_id == 2">
+                <x-jet-label for="user_birthdate" value="{{ __('BirthDate') }}" />
+                <x-jet-input id="user_birthdate" class="block mt-1 w-full" type="text" :value="old('user_birthdate')" name="user_birthdate" />
+            </div>
+
+            <div class="mt-4" x-show="roles_id == 3">
+                <x-jet-label for="instructor_qualifications" value="{{ __('Qualifications') }}" />
+                <x-jet-input id="instructor_qualifications" class="block mt-1 w-full" type="text" :value="old('instructor_qualifications')" name="instructor_qualifications" />
+            </div>
+
+
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">

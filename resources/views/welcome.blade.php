@@ -47,11 +47,8 @@
                                 @auth
                                     <li class="nav-item"><a href="{{ url('/dashboard') }}" class="nav-link js-scroll-trigger">Dashboard</a></li>
                                 @else
-                                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="nav-link" aria-expanded="false">Log in</a></li>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="#">Student</a></li>
-                                        <li><a class="dropdown-item" href="#">Instructor</a></li>
-                                    </ul>
+                                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link js-scroll-trigger">Log in</a></li>
+                            
                                 @if (Route::has('register'))
                                     <li class="nav-item"><a href="{{ route('register') }}" class="nav-link js-scroll-trigger">Register</a></li>
                                 @endif

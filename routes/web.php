@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+
 use App\Http\Controllers\UploadFileController;
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,16 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/courseCreation', [UploadFileController::class,'index']);
+//Route::get('/courseCreation', [UploadFileController::class,'index']);
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['middleware' => 'role:user', 'prefix' => 'user', 'as' => 'user.'], function() {
+        Route::resource('lessons', \App\Http\Controllers\Users\LessonController::class);
+    });
+   Route::group(['middleware' => 'role:instructor', 'prefix' => 'instructor', 'as' => 'instructor.'], function() {
+       Route::resource('courses', \App\Http\Controllers\Instructors\CourseController::class);
+   });
+    Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
+    });
+}); 
