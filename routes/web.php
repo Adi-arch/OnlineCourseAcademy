@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 
-use App\Http\Controllers\UploadFileController;
+use App\Http\Controllers\InstructorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +24,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//Route::get('/courseCreation', [UploadFileController::class,'index']);
+Route::get('/courseCreation', [InstructorController::class,'index']);
+Route::get('/InstaDashboard', [InstaDashboard::class,'index']);
 
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'role:user', 'prefix' => 'user', 'as' => 'user.'], function() {
