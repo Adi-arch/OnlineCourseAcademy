@@ -50,6 +50,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/js/bootstrap.bundle.min.js"></script>
  
-    <script src="{{ asset('js/theme.js') }}"></script>                                                   
+    <script src="/js/theme.js"></script>                                                   
 </body>
 </html>
