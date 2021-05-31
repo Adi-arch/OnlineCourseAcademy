@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\CourseCartController;
 
 use App\Http\Controllers\InstructorController;
 /*
@@ -37,4 +38,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function() {
         Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
     });
-}); 
+});
+
+Route::get('/demoshop',[CourseCartController::class, 'shop']);
+Route::get('/cart', [CourseCartController::class, 'index']);
+Route::post('/add', [CourseCartController::class, 'store']);
+Route::post('/update', [CourseCartController::class,'update']);
+Route::post('/remove', [CourseCartController::class,'remove']);
+Route::post('/clear', [CourseCartController::class,'clear']);
+
