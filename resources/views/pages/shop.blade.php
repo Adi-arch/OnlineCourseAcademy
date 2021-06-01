@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                     <a href=""><h6 class="card-title">{{ $cou->cname }}</h6></a>
                                     <p>${{ $cou->cprice }}</p>
-                                    <form action="{{ route('store') }}" method="POST">
+                                    <form action="{{ route('addtoc') }}" method="POST">
                                         {{ csrf_field() }}
                                         <input type="hidden" value="{{ $cou->cid }}" id="id" name="id">
                                         <input type="hidden" value="{{ $cou->cname }}" id="name" name="name">

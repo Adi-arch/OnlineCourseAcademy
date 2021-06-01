@@ -11,7 +11,7 @@ class CourseCartController extends Controller
     public function shop()
     {
         $course = Courses::all();
-       // dd($course);
+        //dd($course);
         return view('pages.shop')->withTitle('SKILLS UNIVERSITY | SHOP')->with(['course' => $course]);
     }
 
