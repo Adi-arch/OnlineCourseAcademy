@@ -16,7 +16,9 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ]);
-mix.js('resources/js/theme.js','public/js');
+mix.js('resources/js/theme.js', 'public/js');
+mix.postCss('resources/css/bootstrap.min.css', '/public/css');
+mix.postCss('resources/css/idash.css', '/public/css');
 if (mix.inProduction()) {
     mix.version();
 }
