@@ -23,6 +23,10 @@
                     @endif
 
                     @if (auth()->user()->roles_id == 2)
+                        <x-jet-nav-link href="{{ route('user.shop.index') }}" :active="request()->routeIs('user.shop.index')">
+                            {{ __('Shop') }}
+                        </x-jet-nav-link>
+
                         <x-jet-nav-link href="{{ route('user.lessons.index') }}" :active="request()->routeIs('user.lessons.index')">
                             {{ __('Lessons') }}
                         </x-jet-nav-link>
@@ -94,7 +98,7 @@
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                    <img class="h-8 w-8 rounded-full object-cover " src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
