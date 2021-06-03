@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
-use App\Http\Controllers\CourseCartController;
+// use App\Http\Controllers\CourseCartController;
 use App\Http\Controllers\InstaDashboard;
 use App\Http\Controllers\InstructorController;
 /*
@@ -32,6 +32,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'role:user', 'prefix' => 'user', 'as' => 'user.'], function() {
         Route::resource('lessons', \App\Http\Controllers\Users\LessonController::class);
     });
+    Route::group(['middleware' => 'role:user', 'prefix' => 'user', 'as' => 'user.'], function() {
+        Route::resource('shop', \App\Http\Controllers\Users\CourseCartController::class);
+    });
+
    Route::group(['middleware' => 'role:instructor', 'prefix' => 'instructor', 'as' => 'instructor.'], function() {
        Route::resource('courses', \App\Http\Controllers\Instructors\CourseController::class);
    });
@@ -40,10 +44,10 @@ Route::group(['middleware' => 'auth'], function() {
     });
 });
 
-Route::get('/demoshop',[CourseCartController::class, 'shop'])->name('dshop');
-Route::get('/cart', [CourseCartController::class, 'index'])->name('cart');
-Route::post('/add', [CourseCartController::class, 'store'])->name('addtoc');
-Route::post('/update', [CourseCartController::class,'update'])->name('update');
-Route::post('/remove', [CourseCartController::class,'remove'])->name('remove');
-Route::post('/clear', [CourseCartController::class,'clear'])->name('clear');
+// Route::get('/demoshop',[CourseCartController::class, 'shop'])->name('dshop');
+// Route::get('/cart', [CourseCartController::class, 'index'])->name('cart');
+ Route::post('/add', [CourseCartController::class, 'store'])->name('addtoc');
+// Route::post('/update', [CourseCartController::class,'update'])->name('update');
+// Route::post('/remove', [CourseCartController::class,'remove'])->name('remove');
+// Route::post('/clear', [CourseCartController::class,'clear'])->name('clear');
 
