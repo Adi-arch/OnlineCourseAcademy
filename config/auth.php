@@ -18,6 +18,16 @@ return [
         'passwords' => 'users',
     ],
 
+    'admin'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Admin::class,
+    ],
+
+    'instructor'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Instructor::class,
+     ],
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -46,6 +56,14 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'admin'=>[
+            'driver'=>'session',
+            'provider'=>'admins',
+         ],
+         'instructor'=>[
+            'driver'=>'session',
+            'provider'=>'instructor',
+         ],
     ],
 
     /*
@@ -70,6 +88,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+         ],
+
+         'instructor'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Instructor::class,
+         ],
+
+        
 
         // 'users' => [
         //     'driver' => 'database',
@@ -99,6 +129,16 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        'admins'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Admin::class,
+        ],
+
+        'instructor'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Instructor::class,
+         ],
     ],
 
     /*
