@@ -42,19 +42,21 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-                        @if (Route::has('login'))
+                        @if (Route::has('user.login'))
                             {{-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block"> --}}
                                 @auth
                                     <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link js-scroll-trigger">Home</a></li>
                                 @else
-                                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link js-scroll-trigger">Log in</a></li>
+                                    <li class="nav-item"><a href="{{ route('user.login') }}" class="nav-link js-scroll-trigger">Log in</a></li>
                             
-                                @if (Route::has('register'))
-                                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link js-scroll-trigger">Register</a></li>
+                                @if (Route::has('user.register'))
+                                    <li class="nav-item"><a href="{{ route('user.register') }}" class="nav-link js-scroll-trigger">Register</a></li>
                                 @endif
                                 @endauth
                             {{-- </div> --}}
                         @endif
+
+                        
                     </ul>
                 </div>
             </div>
