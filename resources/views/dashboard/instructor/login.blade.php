@@ -19,14 +19,14 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-    <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
 
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
-                  <h4>User Login</h4><hr>
+                  <h4>Instructor Login</h4><hr>
                   <form action="{{route('instructor.check')}}" method="post" autocomplete="off">
                     @if (Session::get('fail'))
                         <div class="alert alert-danger">

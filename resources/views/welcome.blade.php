@@ -28,7 +28,9 @@
         <!-- Third party plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <link href="/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -47,11 +49,31 @@
                                 @auth
                                     <li class="nav-item"><a href="{{ url('/home') }}" class="nav-link js-scroll-trigger">Home</a></li>
                                 @else
-                                    <li class="nav-item"><a href="{{ route('user.login') }}" class="nav-link js-scroll-trigger">Log in</a></li>
-                            
+                                <li class="nav-item">
+                                        <div class="dropdown">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Login
+                                            </a>
+                                            <ul class=dropdown-menu aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="{{ route('user.login') }}" >User Log in</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('instructor.login') }}">Instructor Login</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('admin.login') }}">Admin Log in</a></li>
+                                            <ul>
+                                        </div>
+                                    </li>           
                                 @if (Route::has('user.register'))
-                                    <li class="nav-item"><a href="{{ route('user.register') }}" class="nav-link js-scroll-trigger">Register</a></li>
-                                @endif
+                                <li class="nav-item">
+                                        <div class="dropdown">
+                                            <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Register
+                                            </a>
+                                            <ul class=dropdown-menu aria-labelledby="dropdownMenuLink">
+                                                <li><a href="{{ route('user.register') }}" class="dropdown-item">Register as User</a></li>
+                                                <li><a href="{{ route('instructor.register') }}" class="dropdown-item">Register as Instructor</a></li>
+                                            </ul> 
+                                        </div>
+                                    </li>
+                                     @endif
                                 @endauth
                             {{-- </div> --}}
                         @endif
@@ -228,6 +250,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
         <!-- Core theme JS-->
-        <script src="{{ URL::to('js/script.js')}}"></script>
+        <script src="/js/scripts.js"></script>
     </body>
 </html>
