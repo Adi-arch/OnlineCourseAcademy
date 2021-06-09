@@ -43,8 +43,8 @@ Route::prefix('user')->name('user.')->group(function(){
     });
 
     Route::middleware(['auth:web', 'PreventBackHistory'])->group(function(){
-        //Route::view('/home','dashboard.user.home')->name('home');   dashboard page for user
-         //Route::view('/home','user.lessons.index')->name('index');   define your own pages
+        Route::view('/home','dashboard.user.home')->name('home');  // dashboard page for user
+       //  Route::view('/home','user.lessons.index')->name('index');  // define your own pages
         Route::post('/logout',[UserController::class,'logout'])->name('logout');
     });
 });
