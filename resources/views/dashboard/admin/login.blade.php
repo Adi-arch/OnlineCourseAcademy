@@ -16,37 +16,83 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            /* background-image: url("../images/back.jpg");  */
+            background-color: #B0BEC5;
+            overflow:hidden;
+            
         }
+        h4{
+            text-align:center;
+            padding-top:20px;
+        }
+        form{
+            border-left: 1px solid black;
+            
+
+        }
+        .form-group{
+            padding-bottom:20px;
+            padding-left:50px;
+        }
+
+    
+        
     </style>
     <link href="/css/styles.css" rel="stylesheet" />
+    
 </head>
-<body style="background-color:#c8d9e8 !important">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 offset-md-4" style="margin-top: 45px">
-                 <h4>Admin Login</h4><hr>
-                 <form action="{{ route('admin.check') }}" method="post">
-                    @if (Session::get('fail'))
-                        <div class="alert alert-danger">
-                            {{ Session::get('fail') }}
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Skills University</a>
+                </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+       
+        <div class="card card0 border-0">
+        <h4>ADMIN LOGIN</h4><hr>
+            <div class="row d-flex">
+            
+                <div class="col-lg-6">
+                    <div class="card1 pb-5 ">
+                        
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src= "/images/adminb.jpg" class="image" style=" margin-left:100px; width: 700px;
+        height: 450px"> 
                         </div>
-                    @endif
-                    @csrf
-                     <div class="form-group">
-                         <label for="email">Email</label>
-                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
-                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
-                     </div>
-                     <div class="form-group">
-                         <label for="password">Password</label>
-                         <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
-                         <span class="text-danger">@error('password'){{ $message }}@enderror</span>
-                     </div>
-                     <div class="form-group">
-                         <button type="submit" class="btn btn-primary">Login</button>
-                     </div>
-                 </form>
-            </div>
+                    </div>
+                </div>  
+                
+                <div class="card2 card border-0 px-4 py-5" style="margin-left:130px; width: 500px;
+        height: 450px;">
+                    <div class="row mb-4 px-3">
+            
+                    
+                        <form action="{{ route('admin.check') }}" method="post">
+                            @if (Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    {{ Session::get('fail') }}
+                                </div>
+                            @endif
+                            @csrf
+                            <div class="form-group">
+                                <label for="email" >Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
+                                <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
+                                <span class="text-danger">@error('password'){{ $message }}@enderror</span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         </div>
     </div>
 

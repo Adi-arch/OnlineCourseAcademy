@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Dashboard | Home</title>
+    
+    
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -21,8 +23,66 @@
     <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
+ 		<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="#">Skills University</a>
+	    	</div>
+        
 
-    <div class="container">
+            <ul class="nav navbar-nav navbar-right">
+               
+            <li ><a href="#"><span class="d-flex align-items-center" style="margin-left:30px;
+  margin-right:30px;">
+                    <span class="d-none d-sm-inline mx-1">{{Auth::guard('web')->user()->name }}</span>
+                    </a></li>
+
+                 <li > <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                 <span class="ms-1 d-none d-sm-inline  mt-5">Logout</span>
+                                    <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form></a></li>
+                    
+
+                
+            </ul>
+
+
+        </div>
+
+	</nav>
+
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+    
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary mt-5">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="glyphicon glyphicon-home">Home</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="dashboard">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="glyphicon glyphicon-dashboard"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="glyphicon glyphicon-book"></i> <span class="ms-1 d-none d-sm-inline text-white">Courses</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class="glyphicon glyphicon-shopping-cart"></i> <span class="ms-1 d-none d-sm-inline text-white">Shop</span>
+                        </a>
+                    </li>
+
+            
+                
+            </div>
+        </div>
+        <div class="col py-3">
+        <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 45px">
                  <h4>user Dashboard</h4><hr>
@@ -48,11 +108,20 @@
             </div>
         </div>
     </div>
+        </div>
+    </div>
+</div>
+
+   
+    
     
     
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Third party plugin JS-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>

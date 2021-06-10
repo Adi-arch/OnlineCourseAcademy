@@ -51,7 +51,8 @@
                                 @else
                                 <li class="nav-item">
                                         <div class="dropdown">
-                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="margin-left:15px;
+  margin-right:15px;">
                                                 Login
                                             </a>
                                             <ul class=dropdown-menu aria-labelledby="dropdownMenuLink">

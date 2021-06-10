@@ -21,35 +21,106 @@
     <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
 </head>
 </head>
-<body style="background-color: #d7dadb">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                 <h4>Admin Dashboard</h4><hr>
-                 <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
-                         <tr>
-                             <th>Name</th>
-                             <th>Email</th>
-                             <th>Phone</th>
-                             <th>Action</th>
-                         </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td scope="row">{{ Auth::guard('admin')->user()->name }}</td>
-                                 <td>{{ Auth::guard('admin')->user()->email }}</td>
-                                 <td>{{ Auth::guard('admin')->user()->phone }}</td>
-                                 <td>
-                                     <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                     <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
-                                 </td>
-                             </tr>
-                         </tbody>
-                 </table>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
+ 		<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="#">Skills University</a>
+	    	</div>
+        
+
+            <ul class="nav navbar-nav navbar-right">
+               
+            <li ><a href="#"><span class="d-flex align-items-center" style="margin-left:30px;
+  margin-right:30px;">
+                    <span class="d-none d-sm-inline mx-1">{{ Auth::guard('admin')->user()->name }}</span>
+                    </a></li>
+
+                 <li > <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                 <span class="ms-1 d-none d-sm-inline  mt-5">Logout</span>
+                                    <form action="{{ route('admin.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form></a></li>
+                    
+
+                
+            </ul>
+
+
+        </div>
+
+	</nav>
+
+    
+    <div class="container-fluid">
+    <div class="row flex-nowrap">
+    
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary mt-5">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Home</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="dashboard">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class=""></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class=""></i> <span class="ms-1 d-none d-sm-inline text-white">Users</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class=""></i> <span class="ms-1 d-none d-sm-inline text-white">Instructors</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link align-middle px-0">
+                            <i class=""></i> <span class="ms-1 d-none d-sm-inline text-white">Courses</span>
+                        </a>
+                    </li>
+
+                    
+                <hr>
+
+                <hr>
+                
             </div>
         </div>
-    </div>
+            <div class="col py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3" style="margin-top: 45px">
+                        <h4>Admin Dashboard</h4><hr>
+                        <table class="table table-striped table-inverse table-responsive">
+                            <thead class="thead-inverse">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">{{ Auth::guard('admin')->user()->name }}</td>
+                                        <td>{{ Auth::guard('admin')->user()->email }}</td>
+                                        <td>{{ Auth::guard('admin')->user()->phone }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                            <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
