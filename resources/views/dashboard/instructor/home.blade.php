@@ -18,7 +18,7 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-    <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
 

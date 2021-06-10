@@ -20,7 +20,7 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-    <link href="{{ url('/css/style.css')}}" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
