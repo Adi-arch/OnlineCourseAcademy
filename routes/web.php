@@ -6,6 +6,7 @@ use App\Http\Controllers\InstructorDashboardController;
 use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Instructor\InstructorController;
+use App\Http\Controllers\Instructor\CourseCreationController;
 
 // use App\Http\Controllers\CourseCartController;
 // use App\Http\Controllers\InstaDashboard;
@@ -26,6 +27,8 @@ Route::get('/', function () {
 });
 
 
+Route::get('/course-creation', [CourseCreationController::class, 'createCourse']);
+Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload');
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
