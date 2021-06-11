@@ -25,8 +25,8 @@ class CourseCreationController extends Controller
         $video = $req->file('vfile');
         $image = $req->file('ifile');
         
-        $videoName = time().'.'.$video->extension();
-        $imageName = time().'.'.$image->extension();
+        $videoName = $video->getClientOriginalName();
+        $imageName = $image->getClientOriginalName();
 
         $video->move(public_path('videos'),$videoName);
         $image->move(public_path('imgs'),$imageName);
@@ -36,8 +36,8 @@ class CourseCreationController extends Controller
         $course->cname = $cname;
         $course->cprice = $cprice;
         $course->description = $cdescription;
-        $course->video_path=$video;
-        $course->image_path=$image;
+        $course->video_path=$videoName;
+        $course->image_path=$imageName;
         $course->save();
 
                 return back()->with('success','Course has been uploaded.');
