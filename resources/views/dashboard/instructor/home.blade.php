@@ -21,6 +21,33 @@
     <link href="/css/styles.css" rel="stylesheet" />
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
+ 		<div class="container-fluid">
+	    	<div class="navbar-header">
+	      		<a class="navbar-brand" href="#">Skills University</a>
+	    	</div>
+        
+
+            <ul class="nav navbar-nav navbar-right">
+               
+            <li ><a href="#"><span class="d-flex align-items-center" style="margin-left:30px;
+  margin-right:30px;">
+                    <span class="d-none d-sm-inline mx-1">{{Auth::guard('instructor')->user()->name }}</span>
+                    </a></li>
+
+                 <li > <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                 <span class="ms-1 d-none d-sm-inline  mt-5">Logout</span>
+                                    <form action="{{ route('instructor.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form></a></li>
+                    
+
+                
+            </ul>
+
+
+        </div>
+
+	</nav>
+
 
     <div class="container">
         <div class="row">

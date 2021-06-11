@@ -50,37 +50,7 @@
 
 	</nav>
 
-    <div class="container-fluid">
-    <div class="row flex-nowrap">
     
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-primary mt-5">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="glyphicon glyphicon-home">Home</span>
-                </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="dashboard">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="glyphicon glyphicon-dashboard"></i> <span class="ms-1 d-none d-sm-inline text-white">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="glyphicon glyphicon-book"></i> <span class="ms-1 d-none d-sm-inline text-white">Courses</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link align-middle px-0">
-                            <i class="glyphicon glyphicon-shopping-cart"></i> <span class="ms-1 d-none d-sm-inline text-white">Shop</span>
-                        </a>
-                    </li>
-
-            
-                
-            </div>
-        </div>
         <div class="col py-3">
         <div class="container">
         <div class="row">
