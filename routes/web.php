@@ -7,6 +7,7 @@ use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Instructor\InstructorController;
 use App\Http\Controllers\Instructor\CourseCreationController;
+use App\Http\Controllers\Users\EnrollCourseController;
 
 // use App\Http\Controllers\CourseCartController;
 // use App\Http\Controllers\InstaDashboard;
@@ -29,6 +30,10 @@ Route::get('/', function () {
 
 Route::get('/course-creation', [CourseCreationController::class, 'createCourse']);
 Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload');
+Route::get('/enroll',[EnrollCourseController::class, 'enroll']);
+Route::get('/cart',[EnrollCourseController::class, 'cart']);
+Route::get('/add-to-cart/{id}',[EnrollCourseController::class, 'addToCart']);
+Route::delete('remove-from-cart',[EnrollCourseController::class, 'remove']);
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
