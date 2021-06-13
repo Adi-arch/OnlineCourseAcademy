@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Instructor\InstructorController;
 use App\Http\Controllers\Instructor\CourseCreationController;
 use App\Http\Controllers\Users\EnrollCourseController;
+use App\Http\Controllers\Instructor\QuizCreationController;
+use App\Http\Controllers\Instructor\QuizQuestionController;
 
 // use App\Http\Controllers\CourseCartController;
 // use App\Http\Controllers\InstaDashboard;
@@ -86,7 +88,11 @@ Route::prefix('instructor')->name('instructor.')->group(function(){
     Route::middleware(['auth:instructor', 'PreventBackHistory'])->group(function(){
         Route::view('/home','dashboard.instructor.home')->name('home');
         Route::get('/course-creation', [CourseCreationController::class, 'createCourse'])->name('createCourse');
-        Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload');    
+        Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload'); 
+        Route::get('/quiz-creation', [QuizCreationController::class,'create'])->name('createQuiz');
+        Route::post('/quiz-creation', [QuizCreationController::class,'uploadQuiz'])->name('uploadQuiz');
+        Route::get('/quiz-questions', [QuizQuestionController::class,'index'])->name('questions');
+        Route::post('/quiz-questions', [QuizQuestionController::class, 'store'])->name('store');
         Route::post('logout',[InstructorController::class,'logout'])->name('logout');
     });
 });
