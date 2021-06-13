@@ -36,7 +36,7 @@ class CourseCreationController extends Controller
 
 
         // $instructor = Instructor::find(1);
-        $instructor = Instructor::all();
+        $instructor = Instructor::find(1);
         $course = new Courses;
 
         $course->cname = $cname;
@@ -47,9 +47,9 @@ class CourseCreationController extends Controller
         $course->instructor_id=$instructor->id;
         //$course=Instructor::find(1)->courses; 
         //one to many
-        foreach($course as $course){
-            $course->save();
-        }  
+        // foreach($course as $course){
+        //     $course->save();
+        // }  
         
         //$course->instructor_id= $req->instructor()->id; //one to one
   
