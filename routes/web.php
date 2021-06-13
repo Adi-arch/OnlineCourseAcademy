@@ -28,12 +28,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/course-creation', [CourseCreationController::class, 'createCourse']);
-Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload');
-Route::get('/enroll',[EnrollCourseController::class, 'enroll']);
-Route::get('/cart',[EnrollCourseController::class, 'cart']);
-Route::get('/add-to-cart/{id}',[EnrollCourseController::class, 'addToCart']);
-Route::delete('remove-from-cart',[EnrollCourseController::class, 'remove']);
+
+
+
 Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -51,8 +48,14 @@ Route::prefix('user')->name('user.')->group(function(){
     });
 
     Route::middleware(['auth:web', 'PreventBackHistory'])->group(function(){
-        Route::view('/home','dashboard.user.home')->name('home');  // dashboard page for user
+        Route::view('/home','dashboard.user.home')->name('home'); 
+           
+        // dashboard page for user
        //  Route::view('/home','user.lessons.index')->name('index');  // define your own pages
+        Route::get('/enroll',[EnrollCourseController::class,'enroll'])->name('courses');
+        Route::get('/cart',[EnrollCourseController::class, 'cart'])->name('cart');
+        Route::get('/add-to-cart/{id}',[EnrollCourseController::class, 'addToCart'])->name('addtoc');
+        Route::delete('/cart/remove-from-cart',[EnrollCourseController::class, 'remove']);
         Route::post('/logout',[UserController::class,'logout'])->name('logout');
     });
 });
@@ -82,6 +85,8 @@ Route::prefix('instructor')->name('instructor.')->group(function(){
 
     Route::middleware(['auth:instructor', 'PreventBackHistory'])->group(function(){
         Route::view('/home','dashboard.instructor.home')->name('home');
+        Route::get('/course-creation', [CourseCreationController::class, 'createCourse'])->name('createCourse');
+        Route::post('/course-creation',[CourseCreationController::class, 'courseUpload'])->name('courseUpload');    
         Route::post('logout',[InstructorController::class,'logout'])->name('logout');
     });
 });
