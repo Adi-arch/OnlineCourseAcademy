@@ -12,12 +12,12 @@ class EnrollCourseController extends Controller
     public function enroll()
     {
         $courses = Courses::all();
-        return view('courses',compact('courses'));
+        return view('dashboard.user.courses',compact('courses'));
     }
     
     public function cart()
     {
-        return view('cart');
+        return view('dashboard.user.cart');
     }
 
     public function addToCart($id)
