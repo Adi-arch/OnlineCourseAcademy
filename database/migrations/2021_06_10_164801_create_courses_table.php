@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->string('video_path');  
             $table->string('image_path');
+            $table->foreignId('instructor_id')->nullable()->constrained('instructors')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
