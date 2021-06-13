@@ -31,6 +31,10 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="{{route('instructor.createCourse')}}">Create Course</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{route('instructor.createQuiz')}}">Create Quiz</a>
+                        </li>
                     </ul>
                 </div>
 
