@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Instructor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Courses;
+use App\Models\Instructor;
+use App\Http\Controllers\Auth;
 
 class CourseCreationController extends Controller
 {
     public function createCourse()
     {
-        return view('course-upload');
+        return view('dashboard.instructor.course-upload');
     }
 
     public function courseUpload(Request $req)    
@@ -32,15 +34,27 @@ class CourseCreationController extends Controller
         $image->move(public_path('imgs'),$imageName);
 
 
+
+        // $instructor = Instructor::find(1);
+        $instructor = Instructor::all();
         $course = new Courses;
+
         $course->cname = $cname;
         $course->cprice = $cprice;
         $course->description = $cdescription;
         $course->video_path=$videoName;
         $course->image_path=$imageName;
+        $course->instructor_id=$instructor->id;
+        //$course=Instructor::find(1)->courses; 
+        //one to many
+        foreach($course as $course){
+            $course->save();
+        }  
+        
+        //$course->instructor_id= $req->instructor()->id; //one to one
+  
         $course->save();
 
-                return back()->with('success','Course has been uploaded.');
-    
+        return back()->with('success','Course has been uploaded.');    
     }
 }
