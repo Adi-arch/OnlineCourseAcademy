@@ -1,4 +1,4 @@
-@extends('dashboard/user/home')
+@extends('dashboard/user/parent')
 
 @section('title', 'Cart')
 
