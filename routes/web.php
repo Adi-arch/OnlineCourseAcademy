@@ -74,6 +74,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/logout',[AdminController::class,'logout'])->name('logout');
         Route::get('/instructors', [AdminController::class,'viewInstructor'])->name('instructor');
         Route::get('/users', [AdminController::class,'viewUser'])->name('users');
+        Route::get('/courses', [AdminController::class,'viewCourse'])->name('courses');
     });
 
 });
