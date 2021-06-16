@@ -17,11 +17,25 @@
         body {
             font-family: 'Nunito', sans-serif;
         }
+        
+    </style>
+
+<style>
+        .vl {
+            border-left: 3px solid orange;
+            height: 500px;
+            position: absolute;
+            left: 80%;
+            margin-left: -3px;
+            top: 0;
+        }
+        
     </style>
     <link href="/css/styles.css" rel="stylesheet" />
 </head>
 </head>
 <body>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-6">
  		<div class="container-fluid">
@@ -49,39 +63,54 @@
         </div>
 
 	</nav>
+    
 
-    
-    
-            <div class="col py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                        <h4>Admin Dashboard</h4><hr>
-                        <table class="table table-striped table-inverse table-responsive">
-                            <thead class="thead-inverse">
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td scope="row">{{ Auth::guard('admin')->user()->name }}</td>
-                                        <td>{{ Auth::guard('admin')->user()->email }}</td>
-                                        <td>{{ Auth::guard('admin')->user()->phone }}</td>
-                                        <td>
-                                            <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
-                                            <form action="{{ route('admin.logout') }}" id="logout-form" method="post">@csrf</form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                        </table>
-                    </div>
+    <hr class="mt-5">
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="">
+                <div class="vl"></div>
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('admin.instructor')}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                Instructors
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.users')}}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-file">
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                    <polyline points="13 2 13 9 20 9"></polyline>
+                                </svg>
+                                Users
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                    </ul>
                 </div>
-            </div>
+            </nav>
+
+            
         </div>
+    
+
+    <div class="container page">
+        @yield('content')
+    </div>
+
+   
+    
+    
+            
 
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -89,6 +118,10 @@
     <!-- Third party plugin JS-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
         
 </body>
 </html>
