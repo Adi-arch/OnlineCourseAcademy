@@ -10,6 +10,8 @@ use App\Http\Controllers\Instructor\CourseCreationController;
 use App\Http\Controllers\Users\EnrollCourseController;
 use App\Http\Controllers\Instructor\QuizCreationController;
 use App\Http\Controllers\Instructor\QuizQuestionController;
+use App\Http\Controllers\Instructor\DashboardController;
+
 
 // use App\Http\Controllers\CourseCartController;
 // use App\Http\Controllers\InstaDashboard;
@@ -96,6 +98,7 @@ Route::prefix('instructor')->name('instructor.')->group(function(){
         Route::post('/quiz-creation', [QuizCreationController::class,'uploadQuiz'])->name('uploadQuiz');
         Route::get('/quiz-questions', [QuizQuestionController::class,'index'])->name('questions');
         Route::post('/quiz-questions', [QuizQuestionController::class, 'store'])->name('store');
+        Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
         Route::post('logout',[InstructorController::class,'logout'])->name('logout');
     });
 });

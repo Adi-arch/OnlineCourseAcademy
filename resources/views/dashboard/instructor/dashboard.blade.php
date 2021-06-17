@@ -1,4 +1,4 @@
-@extends('dashboard/instructor/home')
+@extends('dashboard/instructor/parent')
 
 @section('content')
 <div class="container course-upload ">
