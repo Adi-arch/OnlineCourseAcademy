@@ -1,4 +1,4 @@
-@extends('dashboard/user/home')
+@extends('dashboard/user/parent')
 @section('content')
 <div class="container checkOut">
     <hr class="mt-5">
