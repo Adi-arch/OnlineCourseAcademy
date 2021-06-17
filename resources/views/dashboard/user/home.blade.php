@@ -208,6 +208,7 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            overflow:hidden;
         }
     </style>
     <link href="/css/styles.css" rel="stylesheet" />
@@ -296,14 +297,52 @@
             </div>
         </nav>
     </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img class="d-block w-100" src="..\images\userimg1.jpg" alt="First slide" style="height:700px">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h2>Come teach with us</h2>
+                    <p>Become an instructor and change lives — including your own</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="..\images\userimg2.jpg" alt="Second slide" style="height:700px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Inspire learners</h2>
+                    <p>Teach what you know and help learners explore their interests, gain new skills, and advance their careers.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-100" src="..\images\userimg3.jpg" alt="Third slide" style="height:700px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2>Teach your way</h2>
+                    <p> Add your course materials, teach in the way you want, and always have of control your own content.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+   
 
     <div class="container page">
         @yield('content')
     </div>
-
+                                
 
     @yield('scripts')
-
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>

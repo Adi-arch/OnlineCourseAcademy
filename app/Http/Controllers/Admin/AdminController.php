@@ -8,7 +8,10 @@ use App\Http\Controllers\Users\UserController;
 use Illuminate\Http\Request;
 
 use App\Models\Admin;
+use App\Models\Instructor;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -32,5 +35,21 @@ class AdminController extends Controller
     function logout(){
         Auth::guard('admin')->logout();
         return redirect('/');
+    }
+
+    public function viewInstructor()
+    {
+        $instructors = Instructor::all();
+        return view('dashboard.admin.instructor',compact('instructors'));
+    }
+    public function viewUser()
+    {
+        $users = User::all();
+        return view('dashboard.admin.users',compact('users'));
+    }
+    public function viewCourse()
+    {
+        $courses= DB::table('courses')->join('instructors','courses.instructor_id','instructors.id')->select('courses.*','instructors.name as instructor_name')->get();
+        return view('dashboard.admin.courses',compact('courses'));
     }
 }
