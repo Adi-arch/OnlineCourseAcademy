@@ -16,7 +16,7 @@
                     <h4>{{ $course->cname }}</h4>
                     <p>{{ $course->description }}</p>
                     <p><strong>Price: </strong> {{ $course->cprice }}$</p>
-                    <p class="btn-holder"><a href="{{ route('user.addtoc',$course->cid) }}"
+                    <p class="btn-holder"><a href="{{ route('user.addtoc',$course->id) }}"
                             class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
                 </div>
             </div>

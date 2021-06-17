@@ -13,6 +13,16 @@
     <link href="/css/styles.css" rel="stylesheet" />
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" --}}
     {{-- integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> --}}
+    <style>
+        .vl {
+            border-left: 3px solid orange;
+            height: 500px;
+            position: absolute;
+            left: 80%;
+            margin-left: -3px;
+            top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,6 +44,9 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" href="{{route('instructor.createQuiz')}}">Create Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{route('instructor.dashboard')}}">Dashboard</a>
                         </li>
                     </ul>
                 </div>
