@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Courses;
+use App\Models\Enroll;
+use App\Models\Cart;
 
 class EnrollCourseController extends Controller
 {
@@ -14,21 +16,27 @@ class EnrollCourseController extends Controller
         $courses = Courses::all();
         return view('dashboard.user.courses',compact('courses'));
     }
-    
+     
     public function cart()
-    {
-        return view('dashboard.user.cart');
+    {   
+        $cartCollection = \Cart::getContent();
+        return view('dashboard.user.cart',compact('cartCollection'));
     }
+    
 
-    public function addToCart($id)
+    public function addToCart(Request $request,$id)
     {
-        $courses = Courses::find($id);
+    
+       $courses = Courses::find($id);
+       $userId=$request->user()->id;
+    //   dd($userId);
 
         if(!$courses) {
             abort(404);
         }
 
         $cart = session()->get('cart');
+        $request->session()->regenerate();
         // if cart is empty then this the first course
         if(!$cart) {
             $cart = [
@@ -54,14 +62,42 @@ class EnrollCourseController extends Controller
 
     public function remove(Request $request)
     {
-        if($request->cid) {
+        if($request->id) {
             $cart = session()->get('cart');
-            if(isset($cart[$request->cid])) {
-                unset($cart[$request->cid]);
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
             session()->flash('success', 'Course removed successfully');
         }
+    }
+
+    public function checkOut()
+    {
+        return view('dashboard.user.checkOut');
+    }
+
+    public function pay(Request $req)
+    {
+        $cardNumber =  $req->cardNumber;
+        $cardMonth = $req->cardMonth;
+        $cardYear = $req->cardYear;
+        $cardccv = $req->cardccv;
+        $cardName = $req->cardName;
+        $id = $req->user()->id;
+
+        $enroll = new Enroll;
+
+        $enroll->card_number = $cardNumber;
+        $enroll->card_month = $cardMonth;
+        $enroll->card_year= $cardYear;
+        $enroll->ccv = $cardccv;
+        $enroll->card_name = $cardName;
+        $enroll->user_id = $id;
+
+        $enroll->save();
+        return back()->with('success','Payment successfull!');
+
     }
 
 

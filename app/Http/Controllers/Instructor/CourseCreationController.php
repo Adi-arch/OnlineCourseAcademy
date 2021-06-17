@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Courses;
 use App\Models\Instructor;
 use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CourseCreationController extends Controller
 {
@@ -35,7 +36,6 @@ class CourseCreationController extends Controller
 
 
 
-        // $instructor = Instructor::find(1);
         $instructor = Instructor::find(1);
         $course = new Courses;
 
@@ -44,8 +44,10 @@ class CourseCreationController extends Controller
         $course->description = $cdescription;
         $course->video_path=$videoName;
         $course->image_path=$imageName;
-        $course->instructor_id=$instructor->id;
-        //$course=Instructor::find(1)->courses; 
+        $course->instructor()->associate($instructor);
+        $id = $req->user()->id;
+        $course->instructor_id=$id;
+                //$course=Instructor::find(1)->courses; 
         //one to many
         // foreach($course as $course){
         //     $course->save();
@@ -56,5 +58,10 @@ class CourseCreationController extends Controller
         $course->save();
 
         return back()->with('success','Course has been uploaded.');    
+    }
+
+    public function courseUpdate()
+    {
+        
     }
 }
