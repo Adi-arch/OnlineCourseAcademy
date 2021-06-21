@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\InstructorDashboardController;
 use App\Http\Controllers\Users\UserController;
+use App\Http\Controllers\Users\UserCourseController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Instructor\InstructorController;
 use App\Http\Controllers\Instructor\CourseCreationController;
@@ -62,6 +63,8 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::delete('/cart/remove-from-cart',[EnrollCourseController::class, 'remove']);
         Route::get('/cart/checkout',[EnrollCourseController::class, 'checkOut'])->name('checkOut');
         Route::post('/cart/checkout',[EnrollCourseController::class, 'pay'])->name('pay');
+        Route::get('/yourCourses',[UserCourseController::class,'viewCourse'])->name('yourCourses');
+        Route::get('/courseVideos',[UserCourseController::class,'viewVideo'])->name('courseVideos');
         Route::post('/logout',[UserController::class,'logout'])->name('logout');
     });
 });
