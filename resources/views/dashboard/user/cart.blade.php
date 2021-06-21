@@ -1,6 +1,6 @@
 @extends('dashboard/user/parent')
 
-@section('title', 'Cart')
+
 
 @section('content')
 
@@ -15,28 +15,27 @@
     </thead>
     <tbody>
         <?php $total = 0 ?>
-        @if(session('cart'))
-        @foreach(session('cart') as $id => $details)
-        <?php $total += $details['cprice']?>
+        @foreach ($carts as $cart)
+        <?php $total += $cart->course_price?>
         <tr>
             <td data-th="Course">
                 <div class="row">
-                    <div class="col-sm-3 hidden-xs"><img src="{{asset('imgs')}}/{{ $details['image_path'] }}"
-                            width="100" height="100" class="img-responsive" /></div>
+                    <div class="col-sm-3 hidden-xs"><img src="{{asset('imgs')}}/{{ $cart->course_image}}" width="100"
+                            height="100" class="img-responsive" /></div>
                     <div class="col-sm-9">
-                        <h4 class="nomargin">{{ $details['cname'] }}</h4>
+                        <h4 class="nomargin">{{ $cart->course_name }}</h4>
                     </div>
                 </div>
             </td>
-            <td data-th="Price">${{ $details['cprice'] }}</td>
-            <td data-th="Subtotal" class="text-center">${{ $details['cprice']}}</td>
+            <td data-th="Price">${{ $cart->course_price }}</td>
+            <td data-th="Subtotal" class="text-center">${{ $cart->course_price }}</td>
             <td class="actions" data-th="">
-                <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i
-                        class="fa fa-trash-o"></i></button>
+                {{-- <button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i
+                    class="fa fa-trash-o"></i></button> --}}
             </td>
         </tr>
         @endforeach
-        @endif
+
     </tbody>
     <tfoot>
 

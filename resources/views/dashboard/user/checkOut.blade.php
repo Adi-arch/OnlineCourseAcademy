@@ -1,8 +1,8 @@
 @extends('dashboard/user/parent')
 @section('content')
 <div class="container checkOut">
-    <hr class="mt-5">
-    <div class="card mx-auto d-flex justify-content-center col-6">
+    <hr class="mt-6">
+    <div class="d-flex align-items-center  mb-3">
         @if(Session::has('success'))
         <div class="alert alert-success" role="alert">
             {{Session::get('success')}}
@@ -49,6 +49,11 @@
                         <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
                             <button type="submit" class="btn btn-warning btn-block">Pay Now</button>
                         </div>
+                    </div>
+                    <div class="row">
+                        @foreach ($carts as $cart)
+                        <input type="hidden" name="courseId" value="{{$cart->course_id}}">
+                        @endforeach
                     </div>
 
                 </div>

@@ -208,7 +208,7 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            overflow:hidden;
+            overflow: hidden;
         }
     </style>
     <link href="/css/styles.css" rel="stylesheet" />
@@ -234,113 +234,115 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <div class="dropdown">
+                        {{-- <div class="dropdown">
                             <button type="button" class="btn btn-light" data-toggle="dropdown">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span
                                     class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                            </button>
-                            <div class=" dropdown-menu">
-                                <div class="row total-header-section">
-                                    <div class="col-lg-6 col-sm-6 col-6">
-                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span
-                                            class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                                    </div>
-                                    <?php $total = 0 ?>
-                                    @foreach((array) session('cart') as $id => $details)
-                                    <?php $total += $details['cprice'] ?>
-                                    @endforeach
-                                    <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                                        <p>Total: <span class="text-info">$ {{ $total }}</span></p>
-                                    </div>
+                        </button>
+                        <div class=" dropdown-menu">
+                            <div class="row total-header-section">
+                                <div class="col-lg-6 col-sm-6 col-6">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span
+                                        class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                                 </div>
-                                @if(session('cart'))
-                                @foreach(session('cart') as $id => $details)
-                                <div class="row cart-detail">
-                                    <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                        <img src="{{asset('imgs')}}/{{ $details['image_path'] }}" />
-                                    </div>
-                                    <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                        <p>{{ $details['cname'] }}</p>
-                                        <span class="price text-info"> ${{ $details['cprice'] }}</span>
-                                    </div>
-                                </div>
+                                <?php $total = 0 ?>
+                                @foreach((array) session('cart') as $id => $details)
+                                <?php $total += $details['cprice'] ?>
                                 @endforeach
-                                @endif
-                                <div class="row">
-                                    <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                        <a href="{{ route('user.cart') }}" class="btn btn-primary btn-block">View
-                                            all</a>
-                                    </div>
+                                <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                    <p>Total: <span class="text-info">$ {{ $total }}</span></p>
+                                </div>
+                            </div>
+                            @if(session('cart'))
+                            @foreach(session('cart') as $id => $details)
+                            <div class="row cart-detail">
+                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                    <img src="{{asset('imgs')}}/{{ $details['image_path'] }}" />
+                                </div>
+                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                    <p>{{ $details['cname'] }}</p>
+                                    <span class="price text-info"> ${{ $details['cprice'] }}</span>
+                                </div>
+                            </div>
+                            @endforeach
+                            @endif
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                    <a href="{{ route('user.cart') }}" class="btn btn-primary btn-block">View
+                                        all</a>
                                 </div>
                             </div>
                         </div>
-                    </li>
+            </div> --}}
+            </li>
 
-                    <li><a href="#"><span class="d-flex align-items-center" style="margin-left:30px;
+            <li><a href="#"><span class="d-flex align-items-center" style="margin-left:30px;
   margin-right:30px;">
-                                <span class="d-none d-sm-inline mx-1">{{Auth::guard('web')->user()->name }}</span>
-                        </a></li>
+                        <span class="d-none d-sm-inline mx-1">{{Auth::guard('web')->user()->name }}</span>
+                </a></li>
 
-                    <li> <a href="{{ route('user.logout') }}"
-                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <span class="ms-1 d-none d-sm-inline  mt-5">Logout</span>
-                            <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">
-                                @csrf
-                            </form>
-                        </a>
-                    </li>
-
-
-                </ul>
+            <li> <a href="{{ route('user.logout') }}"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    <span class="ms-1 d-none d-sm-inline  mt-5">Logout</span>
+                    <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">
+                        @csrf
+                    </form>
+                </a>
+            </li>
 
 
-            </div>
-        </nav>
+            </ul>
+
+
+    </div>
+    </nav>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
                 <img class="d-block w-100" src="..\images\userimg1.jpg" alt="First slide" style="height:700px">
-                    <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block">
                     <h2>Come teach with us</h2>
                     <p>Become an instructor and change lives — including your own</p>
-                    </div>
                 </div>
-                <div class="carousel-item">
+            </div>
+            <div class="carousel-item">
                 <img class="d-block w-100" src="..\images\userimg2.jpg" alt="Second slide" style="height:700px">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Inspire learners</h2>
-                    <p>Teach what you know and help learners explore their interests, gain new skills, and advance their careers.</p>
-                    </div>
+                    <p>Teach what you know and help learners explore their interests, gain new skills, and advance their
+                        careers.</p>
                 </div>
-                <div class="carousel-item">
+            </div>
+            <div class="carousel-item">
                 <img class="d-block w-100" src="..\images\userimg3.jpg" alt="Third slide" style="height:700px">
                 <div class="carousel-caption d-none d-md-block">
                     <h2>Teach your way</h2>
-                    <p> Add your course materials, teach in the way you want, and always have of control your own content.</p>
-                    </div>
+                    <p> Add your course materials, teach in the way you want, and always have of control your own
+                        content.</p>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-   
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
 
     <div class="container page">
         @yield('content')
     </div>
-                                
+
 
     @yield('scripts')
     <!-- Bootstrap core JS-->
