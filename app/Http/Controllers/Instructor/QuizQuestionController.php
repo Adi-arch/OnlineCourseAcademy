@@ -40,7 +40,7 @@ public function index()
         //return $selectLenth;
 
         if ($qustionCount < $selectLenth ) {
-            $examinfo = QuizInfo::find($id);
+            $examInfo = QuizInfo::find($id);
             return view('dashboard.instructor.createQuestion', ['examInfo' => $examInfo]);
         }else{
             $uniqueId=QuizInfo::where('id','=',$id)->value('uniqueid');
