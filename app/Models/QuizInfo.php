@@ -10,6 +10,6 @@ class QuizInfo extends Model
     use HasFactory;
 
     protected $fillable = [
-         'course', 'question_length','uniqueid','time',
+         'instructor_id','course_id', 'question_length','uniqueid','time',
     ];
 }

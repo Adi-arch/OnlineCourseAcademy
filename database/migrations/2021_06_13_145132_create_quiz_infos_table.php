@@ -15,10 +15,11 @@ class CreateQuizInfosTable extends Migration
     {
         Schema::create('quiz_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('course');
             $table->integer('question_length');
             $table->string('uniqueid');
             $table->string('time');
+            $table->foreignID('instructor_id')->nullable()->constrained('instructors')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('course_id')->nullable()->constrained('courses')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
