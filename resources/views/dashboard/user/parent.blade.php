@@ -18,6 +18,9 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+        body{
+            padding-top:50px;
+        }
         .dropdown {
             float: right;
             padding-right: 30px;

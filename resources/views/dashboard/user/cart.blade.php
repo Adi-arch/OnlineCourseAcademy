@@ -3,8 +3,11 @@
 
 
 @section('content')
-
-<table id="cart" class="table table-hover table-condensed">
+<div class=" container fluid">
+<div class="col-md text-center">
+<h3>CART</h3>
+</div>
+<table id="cart" class="table table-hover table-condensed border">
     <thead>
         <tr>
             <th style="width:50%">Course</th>
@@ -49,9 +52,11 @@
     </tfoot>
 </table>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button type="button" class="open-button" onclick="openForm()"> <a
+    <button type="button" class="btn btn-info" onclick="openForm()"> <a class="check text-white text-decoration-none"
             href="{{route('user.checkOut')}}">Checkout</a></button>
 </div>
+</div>
+
 
 @endsection
 
