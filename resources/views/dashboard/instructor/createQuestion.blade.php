@@ -6,7 +6,7 @@
 <form method="post" action="{{route('instructor.store')}}">
 	{{ csrf_field() }}
     
-		<div class="col-md-6 col-lg-6 col-sm-6 col-lg-offset-3">
+		<div class="col-md-6 col-lg-6 col-sm-6 col-lg-offset-3 justify-content-center">
 		  <div class="form-group">
 		    <label class="col-form-label" for="formGroupExampleInput">Question</label>
 		    <input type="text" name="question" class="form-control " id="formGroupExampleInput" required>
