@@ -16,3 +16,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sourceMaps();
 mix.css('resources/css/styles.css', 'public/css/styles.css');
 mix.js('resources/js/scripts.js', 'public/js/scripts.js');
+mix.js('resources/js/payment.js', 'public/js/payment.js');
