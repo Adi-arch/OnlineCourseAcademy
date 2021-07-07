@@ -16,6 +16,14 @@
         overflow:hidden;
         font-family: 'Nunito', sans-serif;
     }
+    h4{
+           color: #D35400;
+           text-decoration: underline;
+        }
+        thead{
+            background-color: #ABB2B9;
+            color: #CB4335;
+        }
 
     
     </style>
