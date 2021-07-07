@@ -12,16 +12,16 @@
                 </div>
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">courses</h1>
+                    <h3>COURSES</h3>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm ">
+                    <table class="table table-striped table-sm border table-hover">
                         <thead>
                         
                             <tr>
-                                <th>courses Name</th>
-                                <th>courses Price</th>
-                                <th>courses Description</th>
+                                <th>Courses Name</th>
+                                <th>Courses Price</th>
+                                <th>Courses Description</th>
                                 <th>
                                     Instructor name
                                 </th>
