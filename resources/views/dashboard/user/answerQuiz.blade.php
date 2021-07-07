@@ -3,16 +3,15 @@
 
 
 @section('content')
-<div class="container answerQuiz">
+<div class="container courseVideos">
     <hr class="mt-6">
     @foreach($questions as $question)
     <div class="col-md-6 col-lg-8 col-sm-6 col-lg-offset-2">
-        <form method="post" action="#" class="ansform">
+        <form method="post" action="{{route('user.storeQuizAns')}}" class="ansform">
             {{ csrf_field() }}
             <h3>{{$question->question}} ?</h3>
             <div class="col-lg-offset-1">
                 <input type="hidden" name="question" value="{{$question->question}}">
-                <input type="hidden" name="user_id" value="{{$user_id}}">
                 <input type="hidden" name="true_answer" value="{{$question->answer}}">
                 <input name="answer" value="{{$question->choice1}}" type="radio"> {{$question->choice1}} <br>
                 <input name="answer" value="{{$question->choice2}}" type="radio">{{$question->choice2}}<br>
