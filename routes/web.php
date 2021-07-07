@@ -6,6 +6,7 @@ use App\Http\Controllers\InstructorDashboardController;
 use App\Http\Controllers\Users\UserController;
 use App\Http\Controllers\Users\UserCourseController;
 use App\Http\Controllers\Users\UserQuizController;
+use App\Http\Controllers\Users\UserQuizAnswerController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Instructor\InstructorController;
 use App\Http\Controllers\Instructor\CourseCreationController;
@@ -68,6 +69,7 @@ Route::prefix('user')->name('user.')->group(function(){
         Route::get('/courseVideos',[UserCourseController::class,'viewVideo'])->name('courseVideos');
         Route::get('/quiz',[UserQuizController::class,'index'])->name('courseQuiz');
         Route::post('/quiz',[UserQuizController::class,'quizStore'])->name('quizStore');
+        Route::post('/quizAnswer',[UserQuizAnswerController::class,'storeQuizAns'])->name('storeQuizAns');
         Route::post('/logout',[UserController::class,'logout'])->name('logout'); 
     });
 });
@@ -107,6 +109,7 @@ Route::prefix('instructor')->name('instructor.')->group(function(){
         Route::get('/quiz-questions', [QuizQuestionController::class,'index'])->name('questions');
         Route::post('/quiz-questions', [QuizQuestionController::class, 'store'])->name('store');
         Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+        Route::get('/studentsEnrolled',[DashboardController::class,'studentEnroll'])->name('studentsEnrolled');
         Route::post('logout',[InstructorController::class,'logout'])->name('logout');
     });
 });
