@@ -110,6 +110,7 @@ Route::prefix('instructor')->name('instructor.')->group(function(){
         Route::post('/quiz-questions', [QuizQuestionController::class, 'store'])->name('store');
         Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
         Route::get('/studentsEnrolled',[DashboardController::class,'studentEnroll'])->name('studentsEnrolled');
+        Route::post('/courseDelete/{id}', [DashboardController::class, 'deleteCourse'])->name('courseDelete');
         Route::post('logout',[InstructorController::class,'logout'])->name('logout');
     });
 });

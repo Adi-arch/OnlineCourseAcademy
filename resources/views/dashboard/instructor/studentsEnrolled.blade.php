@@ -27,7 +27,7 @@
                                 <th>Student Name</th>
                                 <th>Student Email</th>
                                 <th>Student Course</th>
-                                
+
                             </tr>
                         </thead>
                         @foreach($studentEnrolls as $sEnroll)
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{$sEnroll->sname}}</td>
                                 <td>{{$sEnroll->semail}}</td>
-    
+                                <td>{{$sEnroll->cname}}</td>
                             </tr>
                         </tbody>
                         @endforeach

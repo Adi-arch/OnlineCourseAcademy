@@ -20,9 +20,16 @@ class DashboardController extends Controller
     {
         $studentEnrolls= DB::table('enrolls')
                         ->join('users','enrolls.user_id','users.id')
-                        ->select('users.name as sname','users.email as semail')
+                        ->join('courses','enrolls.course_id','courses.id')
+                        ->select('users.name as sname','users.email as semail','courses.cname as cname')
                         ->get();
 
         return view('dashboard.instructor.studentsEnrolled',compact('studentEnrolls'));
+    }
+
+    public function deleteCourse($id) 
+    {
+        DB::delete('delete from courses where id = ?',[$id]);
+        echo "Deleted successfull";
     }
 }
