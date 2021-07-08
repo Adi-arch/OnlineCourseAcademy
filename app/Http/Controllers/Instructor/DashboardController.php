@@ -26,7 +26,6 @@ class DashboardController extends Controller
 
         return view('dashboard.instructor.studentsEnrolled',compact('studentEnrolls'));
     }
-<<<<<<< HEAD
 
     public function deleteCourse($id) 
     {
@@ -34,6 +33,4 @@ class DashboardController extends Controller
         echo "Deleted successfull";
     }
 }
-=======
-}
->>>>>>> 2983339191ae636cada22d4c6bcdec7017a8b0e3
+
